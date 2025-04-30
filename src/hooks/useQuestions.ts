@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Question } from '../assets/types';
-
+import { Question } from '../types';
 export function useQuestions() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selected, setSelected] = useState<Question | null>(null);
@@ -11,12 +10,8 @@ export function useQuestions() {
       .then(setQuestions);
   }, []);
 
-  const drawQuestion = () => {
-    if (questions.length === 0) return;
-    const index = Math.floor(Math.random() * questions.length);
-    const picked = questions[index];
-    const updated = [...questions];
-    updated.splice(index, 1);
+  const drawQuestion = (picked: Question) => {
+    const updated = questions.filter(q => q.question !== picked.question);
     setQuestions(updated);
     setSelected(picked);
   };
@@ -25,7 +20,6 @@ export function useQuestions() {
     questions,
     selectedQuestion: selected,
     drawQuestion,
-    remainingCount: questions.length 
+    remainingCount: questions.length
   };
 }
-

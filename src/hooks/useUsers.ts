@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { User } from '../assets/types';
+import { User } from '../types';
 export function useUsers() {
   const [users, setUsers] = useState<User[]>([]);
   const [selected, setSelected] = useState<User | null>(null);

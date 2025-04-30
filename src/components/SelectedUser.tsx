@@ -1,9 +1,9 @@
-import { User } from "../assets/types";
+import { User } from "../types";
 export function SelectedUser({ user }: { user: User }) {
-  return (
-    <div>
-      <h3>Seçilen Kullanıcı:</h3>
-      <p>{user.name}</p>
-    </div>
-  );
-}
+    return (
+      <div className="card">
+        <h3>Seçilen Kullanıcı</h3>
+        <p>{user.name}</p>
+      </div>
+    );
+  }

@@ -1,23 +1,24 @@
 import { useQuestions } from './hooks/useQuestions';
 import { useUsers } from './hooks/useUsers';
-import { QuestionCard } from './components/QuestionCard';
-import { SelectedUser } from './components/SelectedUser';
+import { SlotMachine } from './components/SlotMachine';
+import { SlotMachineUser } from './components/SlotMachineUser';
 
 function App() {
-  const { selectedQuestion, drawQuestion, remainingCount } = useQuestions();
-  const { selectedUser, drawUser } = useUsers();
+  const { questions, drawQuestion } = useQuestions();
+  const { users, drawUser } = useUsers();
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>🎡 Çarkıfelek Oyunu</h1>
-      <p>Kalan Soru Sayısı: <strong>{remainingCount}</strong></p>
-      <button onClick={drawQuestion}>1. Çevir: Soru Seç</button>
-      {selectedQuestion && <QuestionCard question={selectedQuestion} />}
+    <div style={{ padding: '2rem',width:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'  }}>
+      <h1>🎡 Slot Makinesi Oyun</h1>
+      <p>Kalan Soru Sayısı: {questions.length}</p>
 
-      <button onClick={drawUser} style={{ marginTop: '2rem' }}>
-        2. Çevir: Kullanıcı Seç
-      </button>
-      {selectedUser && <SelectedUser user={selectedUser} />}
+      <SlotMachine questions={questions} onSelect={drawQuestion} />
+
+      {/* {selectedQuestion && <QuestionCard question={selectedQuestion} />} */}
+
+      <SlotMachineUser users={users} onSelect={drawUser} />
+
+      {/* {selectedUser && <SelectedUser user={selectedUser} />} */}
     </div>
   );
 }
