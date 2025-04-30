@@ -58,6 +58,7 @@ export function SlotMachine({ questions, onSelect }: Props) {
           borderRadius: '10px',
           height: '100px',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           background: '#fff',
@@ -68,11 +69,6 @@ export function SlotMachine({ questions, onSelect }: Props) {
         }}
       >
         {displayedText}
-      </div>
-
-      <button onClick={handleStart} disabled={spinning} style={{ marginTop: '1rem' }}>
-        🎰 Soruyu Çek
-      </button>
 
       {selectedQuestion?.keywords && (
         <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -92,6 +88,12 @@ export function SlotMachine({ questions, onSelect }: Props) {
           ))}
         </div>
       )}
+      </div>
+
+      <button onClick={handleStart} disabled={spinning} style={{ marginTop: '1rem' }}>
+        🎰 Soruyu Çek
+      </button>
+
     </div>
   );
 }
