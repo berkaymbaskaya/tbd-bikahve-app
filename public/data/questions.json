@@ -1,6 +1,58 @@
 [
   {
-    "question": "Kod nedir? Bir kodun yaşam serüveni nedir? Nerede başlar nerede biter?",
-    "keywords": ["proje yönetim araçları", "analiz", "versiyon kontrol sistemleri", "hub yapıları", "ortamlar ve testler"]
+    "question": "Kod nedir? Bir kodun yaşam döngüsü nasıl işler, nerede başlar ve nerede biter?",
+    "keywords": ["proje yönetim araçları", "analiz", "versiyon kontrol sistemleri", "hub yapıları", "ortamlar", "testler", "deployment", "maintenance"]
+  },
+  {
+    "question": "Yazılım ekibi nedir? Ekip içinde roller nelerdir ve koordinasyon nasıl sağlanır?",
+    "keywords": ["developer", "iş analisti", "backend", "frontend", "veritabanı", "git", "branch", "junior", "medior", "senior", "dokümantasyon", "scrum", "agile"]
+  },
+  {
+    "question": "Yapay zeka, ChatGPT ve benzeri araçlar geliştiricilerin hayatını nasıl etkiledi?",
+    "keywords": ["vibe code", "agents", "sektör", "üretkenlik", "zaman", "prompt engineering", "productivity"]
+  },
+  {
+    "question": "Yapay zeka yazılımcıların yerini alacak mı?",
+    "keywords": ["ai", "insan faktörü", "agent", "otomasyon"]
+  },
+  {
+    "question": "Remote, hibrit ve ofis çalışma modelleri arasında sektör nereye gidiyor?",
+    "keywords": ["iletişim", "ulaşım", "verimlilik", "insan faktörü", "motivasyon", "çalışma kültürü"]
+  },
+  {
+    "question": "Teknoloji seçimi nasıl yapılmalı? Hangi dilleri ve araçları öğrenmek mantıklı?",
+    "keywords": ["JavaScript", "c#", "java", "python", "html5", "css3", "nodejs", "go", "ruby", "typescript", "framework seçimi", "topluluk desteği"]
+  },
+  {
+    "question": "Freelance, startup ya da kurumsal yapıda çalışmak: hangisi sana göre?",
+    "keywords": ["freelancer", "outsourcing", "ücret", "vergi", "girişim", "startup", "risk", "sorumluluk"]
+  },
+  {
+    "question": "Yazılım sektöründe iş nasıl bulunur? Mülakat süreçleri ve özgeçmiş nasıl olmalı?",
+    "keywords": ["mülakat", "insan kaynakları", "sosyal platformlar", "network", "cv", "github", "portföy", "cover letter"]
+  },
+  {
+    "question": "Yazılım sektöründe maaş beklentisi nasıl belirlenir? Ekonomik koşullar bizi nasıl etkiler?",
+    "keywords": ["ekonomi", "maaş", "beklenti", "enflasyon", "piyasa", "global piyasalar"]
+  },
+  {
+    "question": "Mobil uygulama mı, web uygulaması mı? Projeye göre nasıl karar verilmeli?",
+    "keywords": ["kullanıcı deneyimi", "erişilebilirlik", "platform bağımlılığı", "pwa", "native", "flutter"]
+  },
+  {
+    "question": "Teknolojide tükenmişlik (burnout) nasıl fark edilir ve nasıl başa çıkılır?",
+    "keywords": ["burnout", "mental sağlık", "iş-yaşam dengesi", "molalar", "verimlilik", "destek"]
+  },
+  {
+    "question": "Yazılımcılar neden log yazar? İyi bir log yapısı nasıl olmalıdır?",
+    "keywords": ["loglama", "hata ayıklama", "izlenebilirlik", "log seviyeleri", "observability", "monitoring"]
+  },
+  {
+    "question": "Yazılım projelerinde neden test yapılır? Test türleri nelerdir?",
+    "keywords": ["unit test", "integration test", "otomasyon", "hataların önlenmesi"]
+  },
+  {
+    "question": "Kod okumak mı daha zor, yazmak mı? Neden?",
+    "keywords": ["okunabilirlik", "code review", "refactor", "yazılım kalitesi", "maintainability"]
   }
 ]

@@ -34,15 +34,15 @@ function App() {
     setSelectedUser(null);
     setSessionActive(false);
   };
-  const resetGame = () => {
-    window.location.reload();
-  };
-  
+  // const resetGame = () => {
+  //   window.location.reload();
+  // };
+
   const isGameFinished =
-  questions.length === 0 &&
-  !sessionActive &&
-  selectedQuestion === null &&
-  selectedUser === null;
+    questions.length === 0 &&
+    !sessionActive &&
+    selectedQuestion === null &&
+    selectedUser === null;
 
   return (
     <div style={{ padding: '2rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -50,9 +50,12 @@ function App() {
         <ResultsTable sessions={sessions} />
       ) : (
         <>
-          <h1>🎡 Slot Makinesi Oyun</h1>
+          <div style={{ display: 'flex', flexDirection: 'row', gap: 10 }}>
+            <img src='https://www.tbd.org.tr/wp-content/uploads/2016/06/logo_110_yeni.png'></img>
+            <h1>  | BiKahve </h1>
+          </div>
           <p>Kalan Soru Sayısı: {questions.length}</p>
-  
+
           {!sessionActive && (
             <>
               <SlotMachine
@@ -61,11 +64,13 @@ function App() {
                   drawQuestion(q);
                   handleQuestionSelect(q);
                 }}
+                disabled={selectedQuestion !== null || sessionActive}
               />
+
               <SlotMachineUser users={users} onSelect={handleUserSelect} disabled={!selectedQuestion} />
             </>
           )}
-  
+
           {selectedQuestion && selectedUser && sessionActive && (
             <SessionManager
               questionText={selectedQuestion.question}
@@ -78,7 +83,7 @@ function App() {
       )}
     </div>
   );
-  
+
 }
 
 export default App;

@@ -4,9 +4,11 @@ import { Question } from '../types';
 interface Props {
   questions: Question[];
   onSelect: (q: Question) => void;
+  disabled?: boolean;
 }
 
-export function SlotMachine({ questions, onSelect }: Props) {
+
+export function SlotMachine({ questions, onSelect,disabled }: Props) {
   const [spinning, setSpinning] = useState(false);
   const [displayedText, setDisplayedText] = useState<string>('Hazır');
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
@@ -16,7 +18,7 @@ export function SlotMachine({ questions, onSelect }: Props) {
   const winSound = useRef<HTMLAudioElement>(new Audio('/sounds/win.wav'));
 
   const handleStart = () => {
-    if (questions.length === 0 || spinning) return;
+    if (questions.length === 0 || spinning || disabled) return;
 
     setSpinning(true);
 
@@ -70,29 +72,44 @@ export function SlotMachine({ questions, onSelect }: Props) {
       >
         {displayedText}
 
-      {selectedQuestion?.keywords && (
-        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {selectedQuestion.keywords.map((k, i) => (
-            <span
-              key={i}
-              style={{
-                backgroundColor: '#e0e7ff',
-                color: '#1e3a8a',
-                padding: '0.3rem 0.6rem',
-                borderRadius: '999px',
-                fontSize: '0.85rem'
-              }}
-            >
-              {k}
-            </span>
-          ))}
-        </div>
-      )}
+        {selectedQuestion?.keywords && (
+          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {selectedQuestion.keywords.map((k, i) => (
+              <span
+                key={i}
+                style={{
+                  backgroundColor: '#e0e7ff',
+                  color: '#1e3a8a',
+                  padding: '0.3rem 0.6rem',
+                  borderRadius: '999px',
+                  fontSize: '0.85rem'
+                }}
+              >
+                {k}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
-      <button onClick={handleStart} disabled={spinning} style={{ marginTop: '1rem' }}>
+      <button
+        onClick={handleStart}
+        disabled={spinning || disabled}
+        style={{
+          marginTop: '1rem',
+          backgroundColor: disabled ? '#cccccc' : '#007bff',
+          color: '#fff',
+          border: 'none',
+          padding: '0.75rem 1.5rem',
+          borderRadius: '6px',
+          fontSize: '1rem',
+          cursor: disabled ? 'not-allowed' : 'pointer',
+          opacity: disabled ? 0.6 : 1
+        }}
+      >
         🎰 Soruyu Çek
       </button>
+
 
     </div>
   );
